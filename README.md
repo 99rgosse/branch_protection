@@ -2,16 +2,20 @@
 
 Small Python application to interact with Gitea repositories and protect Branches with regexes & wildcards
 
-## How to use ?
+## How to launch ?
 
 - Change the URL in app.py - line 24
 - Create a token in Gitea, store it as an environment variable on the computer running the service (os.environ['GITEA_TOKEN'])
-
 - Rename "myorganization.ini" to the name of your user in Gitea, or the organization you want to manage
+- Launch with `./_bootstrap.sh` it should take care of itself
+- Create a webhook in Gitea in your organization with "push, delete, create, release" events
+
+Notes :
+- You can dockerize this repository for an easy deployment
+- The soft will store every branches into small text files in order to avoid punching the API on reload, this can be changed
 
 
 ## Config file for determining what to mirror: **name_of_organization**.ini ie : my_organization.ini
-
 
 ### Variables:
 In the .ini file you'll have to make sure at least the following lines are filled: 
@@ -25,8 +29,8 @@ branches: [r"(master)", "mybranch"]
 enable_push : true
 enable_push_whitelist : true
 enable_merge_whitelist : true
-merge_whitelist_teams : ["Owners"] => Store here existing teams
-push_whitelist_teams : ["Owners"] => Store here existing teams
+merge_whitelist_teams : ["Owners"] => Store here *existing* teams
+push_whitelist_teams : ["Owners"] => Store here *existing* teams
 block_on_rejected_reviews : true
 required_approvals: 1
 ```
