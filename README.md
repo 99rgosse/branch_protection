@@ -80,3 +80,7 @@ This is why you must pay attention to the pattern showed in example and provide 
 ### New repositories
 If you enter a new *repo_name*.ini with a repository not existing actually in the server, the service may fail.
 If you enter a new *Team* in the ini that is not existing actually in the server, the service may fail.
+
+# Final notice:
+
+I decline any misuse or accidental deletion following the use of this tool. This is a raw script to ensure branches protection on gitea, not every topics are covered, thanks for your understanding :)
