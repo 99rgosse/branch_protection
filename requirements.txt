@@ -1,4 +1,4 @@
 # uwsgi
 Flask==2.1.1
 requests
-gitPython
+gitPython>=3.1.41
